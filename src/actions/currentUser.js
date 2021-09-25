@@ -8,8 +8,8 @@ export const setCurrentUser = user => {
 
 
 //async action creators
-export const login = credentials => {
-    console.log(credentials)
+export const login = (credentials) => {
+    console.log("credentials are", credentials)
     return  dispatch => {
 
         return fetch("http://127.0.0.1:3000/api/v1/login", {
@@ -32,14 +32,25 @@ export const login = credentials => {
         })
         .catch(console.log)
     }
+}
 
-    
+export const clearCurrentUser = () => {
+    return {
+        type: "CLEAR_CURRENT_USER"
+    }
+}
+
+export const logout = () => {
+    return (dispatch) => {
+        dispatch(clearCurrentUser())
+        return fetch("http://127.0.0.1:3000/api/v1/logout", {
+            credentials: "include",
+            method: "DELETE"
+        })
+    } 
 }
 
 
-
-
-//async action creators
 export const getCurrentUser = () => {
    
     return  dispatch => {
