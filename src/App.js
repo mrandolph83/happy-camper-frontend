@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import NavBar from "./components/Nav.js"
+import MainContainer from "./components/MainContainer.js"
 import { getCurrentUser } from "./actions/currentUser.js"
 import { connect } from "react-redux"
  
@@ -13,7 +14,10 @@ componentDidMount() {
 
   render() {
 return (
+  <div className="App">
  <NavBar/> 
+ <MainContainer/>
+ </div>
   );
 }
 }
