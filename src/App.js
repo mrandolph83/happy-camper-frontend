@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import NavBar from "./components/Nav.js"
+import RecAreaSearch from "./components/RecAreaSearch.js"
 import MainContainer from "./components/MainContainer.js"
 import { getCurrentUser } from "./actions/currentUser.js"
 import { connect } from "react-redux"
@@ -17,6 +18,7 @@ return (
   <div className="App">
  <NavBar/> 
  <MainContainer/>
+ <RecAreaSearch/>
  </div>
   );
 }
