@@ -1,9 +1,9 @@
 
-//synchronous action creators
-export const updateRecAreaForm = formData => {
+export const updateRecAreaForm = (formData) => {
+    console.log(formData)
     return {
         type: "UPDATE_REC_FORM",
-        action: formData
+        formData
     }
 }
 
