@@ -33,6 +33,7 @@ return (
         <input placeholder="stateCode1" value={recAreaFormData.stateCode1} name="stateCode1" type="text" onChange={handleInputChange} />
         <input placeholder="stateCode2" value={recAreaFormData.stateCode2} name="stateCode2" type="text" onChange={handleInputChange} />
         <input placeholder="stateCode3" value={recAreaFormData.stateCode3} name="stateCode3" type="text" onChange={handleInputChange} />
+        <input placeholder="keywords" value={recAreaFormData.keywords} name="keywords" type="text" onChange={handleInputChange} />
         <input type="submit" value="Search Rec Areas"/>
     </form>
     )
