@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateRecAreaForm } from "../actions/recAreaForm.js"
-import { login } from "../actions/currentUser.js"
+import { recAreaUserSearch } from "../actions/recAreaQuery.js"
 
-const RecAreaSearch = ({recAreaForm, updateRecArea, login }) => {
+const RecAreaSearch = ({recAreaForm, updateRecAreaForm, recAreaUserSearch }) => {
 
     const handleInputChange = event => {
         const { name, value } = event.target
@@ -11,12 +11,12 @@ const RecAreaSearch = ({recAreaForm, updateRecArea, login }) => {
             ...recAreaForm,
             [name]: value 
         }
-        updateRecArea(updatedFormInfo)
+        updateRecAreaForm(updatedFormInfo)
     }
 
     const handleSubmit = event => {
         event.preventDefault()
-        login(recAreaForm)
+        recAreaUserSearch(recAreaForm)
     }
 
 // Set hidden values on form for the activities and their numbers (ie "1, ")
@@ -50,4 +50,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { updateRecArea, login })(RecAreaSearch)
+export default connect(mapStateToProps, { updateRecAreaForm, recAreaUserSearch })(RecAreaSearch)
