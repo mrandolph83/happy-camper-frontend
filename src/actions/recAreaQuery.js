@@ -1,18 +1,18 @@
 
 //synchronous action creators
-export const recAreaSearch = searchApi => {
-    return {
-        type: "REC_AREA_QUERY",
-        searchApi
-    }
-}
+// export const recAreaSearch = searchApi => {
+//     return {
+//         type: "REC_AREA_QUERY",
+//         searchApi
+//     }
+// }
 
 //async action creators
 
 // Search API for indexded Results
 
 export const recAreaUserSearch = searchParams => {
-    console.log(searchParams)
+    console.log("Search Params are", searchParams)
     // const keyword = "Yosemite"
     // const stateCodes = "CA, OH, "
     // const activity = "11, 2, "
