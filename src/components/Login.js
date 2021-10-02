@@ -1,7 +1,12 @@
 import React from 'react'
+// Needed because this is a React component
 import { connect } from 'react-redux'
+// Allows for mapStateToProps
 import { updateLoginForm } from "../actions/loginForm.js"
+// The action that takes in this data 
 import { login } from "../actions/currentUser.js"
+// Gives access to login const variable, which is the fetch to the
+// backend that authenticates the user and sets currentUser
 
 const Login = ({loginForm, updateLoginForm, login }) => {
 
@@ -40,4 +45,6 @@ const mapStateToProps = state => {
     }
 }
 
+// Sends this data from the form through these actions, allowing the state to 
+// be updated
 export default connect(mapStateToProps, { updateLoginForm, login })(Login)

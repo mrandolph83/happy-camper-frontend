@@ -15,6 +15,8 @@ export const clearCurrentUser = () => {
 }
 
 //async action creators
+
+// Exported object that goes to Login.js component
 export const login = (credentials) => {
     console.log("credentials are", credentials)
     return  dispatch => {
