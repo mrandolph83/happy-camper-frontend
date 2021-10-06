@@ -26,13 +26,13 @@ return (
     <form onSubmit={handleSubmit}> 
         
         <input placeholder="activity1" value={recAreaFormData.activity1} name="activity1" type="text" onChange={handleInputChange} />
-        <input placeholder="activity2" value={recAreaFormData.activity2} name="activity2" type="text" onChange={handleInputChange} />
+        {/* <input placeholder="activity2" value={recAreaFormData.activity2} name="activity2" type="text" onChange={handleInputChange} />
         <input placeholder="activity3" value={recAreaFormData.activity3} name="activity3" type="text" onChange={handleInputChange} />
         <input placeholder="activity4" value={recAreaFormData.activity4} name="activity4" type="text" onChange={handleInputChange} />
-        <input placeholder="activity5" value={recAreaFormData.activity5} name="activity5" type="text" onChange={handleInputChange} />
+        <input placeholder="activity5" value={recAreaFormData.activity5} name="activity5" type="text" onChange={handleInputChange} /> */}
         <input placeholder="stateCode1" value={recAreaFormData.stateCode1} name="stateCode1" type="text" onChange={handleInputChange} />
-        <input placeholder="stateCode2" value={recAreaFormData.stateCode2} name="stateCode2" type="text" onChange={handleInputChange} />
-        <input placeholder="stateCode3" value={recAreaFormData.stateCode3} name="stateCode3" type="text" onChange={handleInputChange} />
+        {/* <input placeholder="stateCode2" value={recAreaFormData.stateCode2} name="stateCode2" type="text" onChange={handleInputChange} />
+        <input placeholder="stateCode3" value={recAreaFormData.stateCode3} name="stateCode3" type="text" onChange={handleInputChange} /> */}
         <input placeholder="keywords" value={recAreaFormData.keywords} name="keywords" type="text" onChange={handleInputChange} />
         <input type="submit" value="Search Rec Areas"/>
     </form>

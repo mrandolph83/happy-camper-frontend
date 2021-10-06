@@ -1,4 +1,5 @@
 import { resetLoginForm } from "./loginForm.js"
+import { getMyTrips } from "./userFavorites.js"
 
 //synchronous action creators
 export const setCurrentUser = user => {
@@ -37,6 +38,7 @@ export const login = (credentials) => {
             }
             else {
                 dispatch(setCurrentUser(response.data))
+                // dispatch(getUserFavorites())
                 dispatch(resetLoginForm())
             }
         })

@@ -1,11 +1,11 @@
 //synchronous action creators
 
-// export const recAreaResults = results => {
-//     return {
-//         type: "REC_AREA_QUERY_RESULTS",
-//         results
-//     }
-// }
+export const recAreaResults = results => {
+    return {
+        type: "REC_AREA_QUERY_RESULTS",
+        payload: results
+    }
+}
 
 
 //async action creators
