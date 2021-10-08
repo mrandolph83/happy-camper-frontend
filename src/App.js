@@ -4,6 +4,7 @@ import NavBar from "./components/Nav.js"
 import RecAreaSearch from "./components/RecAreaSearch.js"
 import MainContainer from "./components/MainContainer.js"
 import Login from './components/Login.js'
+import Home from './components/Home.js'
 import Logout from './components/Logout'
 import Signup from './components/Signup'
 import { BrowserRouter as Router, Route } from 'react-router-dom' 
@@ -18,12 +19,13 @@ componentDidMount() {
 }
 
   render() {
+    const { loggedIn } = this.props
 return (
   <div className="App">
    <Logout/> 
   <Router> 
  <NavBar/> 
-
+  <Route exact path='/' render={()=> loggedIn ? <PathSelection/> : <Home/>}/>
  <Route exact path='/login' component={Login}/>
  <Route exact path='/signup' component={Signup}/>
  </Router>
@@ -34,6 +36,11 @@ return (
   );
 }
 }
+const mapStateToProps = state => {
+  return ({
+    loggedIn: !!state.currentUser
+  })
+}
 
 
-export default connect(null, { getCurrentUser })(App);
+export default connect(mapStateToProps, { getCurrentUser })(App);
