@@ -20,14 +20,15 @@ componentDidMount() {
   render() {
 return (
   <div className="App">
-     
+   <Logout/> 
+  <Router> 
  <NavBar/> 
-<Router>
+
  <Route exact path='/login' component={Login}/>
  <Route exact path='/signup' component={Signup}/>
  </Router>
- {/* <MainContainer/>
- <RecAreaSearch/> */}
+//  {/* <MainContainer/>
+//  <RecAreaSearch/> */}
  
  </div>
   );
