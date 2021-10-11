@@ -1,9 +1,13 @@
 import React from 'react';
+import { updateNewReviewForm } from '../actions/newReview.js'
 
 // Should be receiving props of current_user id, location_id
 
 const NewReviewForm = () => {
-   const handleChange=() => {}
+   const handleChange = event => {
+      const { name, value } = event.target
+      updateNewReviewForm(name, value)
+   }
 
 return ( 
 <form>
@@ -11,49 +15,49 @@ return (
 <input
 name="user_id"
 onChange={handleChange}
-value={"uid"}
+value={""}
 />
 
 <input
 name="rec_area_id"
 onChange={handleChange}
-value={"rid"}
+value={""}
 />
 
 <input
 name="description"
 onChange={handleChange}
-value={"description"}
+value={""}
 />
 
 <input
 name="picture"
 onChange={handleChange}
-value={"picture"}
+value={""}
 />
 
 <input
 name="nature_review"
 onChange={handleChange}
-value={"nature_review"}
+value={""}
 />
 
 <input
 name="amenities_review"
 onChange={handleChange}
-value={"amenities_review"}
+value={""}
 />
 
 <input
 name="activities_review"
 onChange={handleChange}
-value={"activities_review"}
+value={""}
 />
 
 <input
 name="family_review"
 onChange={handleChange}
-value={"family_review"}
+value={""}
 />
 
 </form>

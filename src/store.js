@@ -1,6 +1,5 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 // store takes data from the reducers,
-import usersReducer from './reducers/users.js'
 import currentUser from './reducers/current_user.js'
 import recAreaForm from './reducers/recAreaForm.js'
 import loginForm from './reducers/loginForm.js'
@@ -11,7 +10,6 @@ import signupForm from './reducers/signupForm.js'
 import thunk from 'redux-thunk'
 
 const reducer = combineReducers({
-  users: usersReducer,
   currentUser, 
   loginForm,
   userFavorites,
