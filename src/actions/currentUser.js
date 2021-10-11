@@ -1,7 +1,6 @@
 import { resetLoginForm } from "./loginForm.js"
 import { resetSignupForm } from "./signupForm.js"
 
-import { getMyTrips } from "./userFavorites.js"
 
 //synchronous action creators
 export const setCurrentUser = user => {
