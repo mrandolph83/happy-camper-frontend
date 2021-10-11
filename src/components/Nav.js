@@ -1,25 +1,28 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom'
+import Logout from './Logout.js'
 
 
-const NavBar = ({ currentUser }) => {
+const NavBar = ({ currentUser, loggedIn }) => {
 
     return (
-        <div className="nav"> 
-      
-             { currentUser ? `Welcome ${currentUser.attributes.name}` : ""}
-           
-            <button>Log In</button>
-            or 
-            <button>Sign Up</button>
-            {/* { currentUser ? <Logout/> : <Login/> } */}
+        <div className="NavBar"> 
+            
+             <NavLink to="/rec_area_search">Discover</NavLink>
+             <NavLink to="/reviews/new">Share</NavLink>
+             <NavLink to="/explore">Explore</NavLink>
+             { loggedIn ? <Logout/> : null}
+
         </div>
     )
 }
 
 const mapStateToProps = ({ currentUser }) => {
     return {
-        currentUser 
+        currentUser,
+        logged_in: !!currentUser
+
     }
 }
    

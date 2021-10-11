@@ -5,7 +5,6 @@ import RecAreaSearch from "./components/RecAreaSearch.js"
 import MainContainer from "./components/MainContainer.js";
 import PathSelection from "./components/PathSelection.js"
 import Login from './components/Login.js'
-import Logout from './components/Logout.js'
 import Home from './components/Home.js'
 import Signup from './components/Signup'
 import NewReview from './components/NewReview.js'
@@ -26,15 +25,15 @@ return (
   <div className="App">
   {/* <NavBar/>  */}
   
-{ loggedIn? <Logout/> : null}
- 
+  <NavBar/>
+ <Switch>
   {/* With render you can be more specific with what props you are sending,
   with component it is the whole component and all props in the ecosystem */}
  <Route exact path='/login' component={Login}/>
  <Route exact path='/signup' component={Signup}/>
   <Route exact path='/' render={(props)=> loggedIn ? <PathSelection/> : <Home/>}/>
   <Route exact path='/review/new' component={NewReview}/>
-  
+  </Switch>
  
 
  
