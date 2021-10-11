@@ -8,7 +8,7 @@ import { signup } from "../actions/currentUser.js"
 // Gives access to login const variable, which is the fetch to the
 // backend that authenticates the user and sets currentUser
 
-const Signup = ({signupForm, updateSignupForm, signup }) => {
+const Signup = ({signupForm, updateSignupForm, signup, history }) => {
 
     const handleInputChange = event => {
         const { name, value } = event.target
@@ -21,7 +21,7 @@ const Signup = ({signupForm, updateSignupForm, signup }) => {
 
     const handleSubmit = event => {
         event.preventDefault()
-        signup(signupForm)
+        signup(signupForm, history)
     }
 
     return (

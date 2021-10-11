@@ -10,7 +10,7 @@ const initialState = {
             case "UPDATE_SIGNUP_FORM":
             return action.formData
             case "RESET_SIGNUP_FORM":
-                return initialState
+            return initialState
             default: 
             return state
         }
