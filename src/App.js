@@ -25,7 +25,8 @@ return (
   <div className="App">
   {/* <NavBar/>  */}
   
-  <NavBar/>
+  <NavBar/> 
+  { loggedIn ? null : <Login/>}
  <Switch>
   {/* With render you can be more specific with what props you are sending,
   with component it is the whole component and all props in the ecosystem */}

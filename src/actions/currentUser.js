@@ -50,6 +50,12 @@ export const login = (credentials, history) => {
 export const logout = () => {
     return (dispatch) => {
         dispatch(clearCurrentUser())
+
+// potential future dispatch actions to put to use to fully 
+// clear state. Make actions to clear within each action/reducer
+
+        // dispatch(clearUserFavorites())
+        // dispatch(clearUserReviews())
         return fetch("http://127.0.0.1:3000/api/v1/logout", {
             credentials: "include",
             method: "DELETE"
