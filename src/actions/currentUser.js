@@ -20,7 +20,7 @@ export const clearCurrentUser = () => {
 
 // Exported object that goes to Login.js component
 export const login = (credentials, history) => {
-    console.log("credentials are", credentials)
+    
     return  dispatch => {
 
         return fetch("http://127.0.0.1:3000/api/v1/login", {
@@ -63,7 +63,7 @@ export const logout = () => {
     } 
 }
 
-export const signup = (credentials) => {
+export const signup = (credentials, history) => {
     console.log("credentials are", credentials)
     return  dispatch => {
 // credentials must be added to a key (user: credentials) before being sent to backend
@@ -90,6 +90,7 @@ export const signup = (credentials) => {
                 dispatch(setCurrentUser(response.data))
                 // dispatch(getUserFavorites())
                 dispatch(resetSignupForm())
+                history.push('/')
             }
         })
         .catch(console.log)
