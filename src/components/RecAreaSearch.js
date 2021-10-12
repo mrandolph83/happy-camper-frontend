@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { updateRecAreaForm } from "../actions/recAreaForm.js"
 import { recAreaUserSearch } from "../actions/recAreaQuery.js"
 
-const RecAreaSearch = ({recAreaFormData, updateRecAreaForm}) => {
+const RecAreaSearch = ({recAreaFormData, updateRecAreaForm, recAreaUserSearch}) => {
 
     const handleInputChange = event => {
         const { name, value } = event.target
