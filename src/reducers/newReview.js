@@ -1,6 +1,7 @@
 const initialState = {
     user_id: "",
     rec_area_id: "",
+    date: "",
     description: "",
     picture: "",
     nature_review: "",
@@ -11,7 +12,6 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
-    console.log("Reducer action", action)
     switch (action.type) {
         case "UPDATE_NEW_REVIEW_FORM":
             return {
