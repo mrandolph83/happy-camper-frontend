@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Logout from './Logout.js'
 
 
@@ -12,7 +12,7 @@ const NavBar = ({ currentUser, loggedIn }) => {
              <NavLink to="/rec_area_search">Discover</NavLink>
              <NavLink to="/reviews/new">Share</NavLink>
              <NavLink to="/explore">Explore</NavLink>
-             { loggedIn ? <Logout/> : null }
+             { loggedIn ? <> Welcome {currentUser.attributes.name} <Logout/></> : null }
 
         </div>
     )
