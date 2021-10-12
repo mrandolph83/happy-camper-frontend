@@ -25,7 +25,9 @@ componentDidMount() {
 return (
   <div className="App">
   
-  <NavBar/> 
+
+  {/* location prop provided by withRouter */}
+  <NavBar location={this.props.location}/> 
   { loggedIn ? null : <Link to='/login'>Login</Link>}
  <Switch>
   {/* With render you can be more specific with what props you are sending,
@@ -34,7 +36,7 @@ return (
  <Route exact path='/logout' component={Logout}/>
  <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
   <Route exact path='/' render={(props)=> loggedIn ? <PathSelection/> : <Home/>}/>
-  <Route exact path='/review/new' component={NewReview}/>
+  <Route exact path='/reviews/new' component={NewReview}/>
   </Switch>
  
 
