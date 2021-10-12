@@ -5,19 +5,25 @@ export const updateNewReviewForm = (name, value) => {
     }
 }
 
+
+        
+// Check what the credentials are
+
+
 export const createReview = reviewData => {
+    console.log("reviewData is", reviewData)
     return dispatch => {
-        return fetch("http://localhost:3000/api/v1/reviews", { 
+    return fetch("http://127.0.0.1:3000/api/v1/reviews", { 
         credentials: "include",
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-// Check what the credentials are
-
-        body: JSON.stringify(reviewData)
+            body: JSON.stringify(reviewData)
         })
+
         .then(r => r.json())
-        .then(console.log)
-    }
-}
+        .then(editedParkList => {
+          console.log(editedParkList)
+            
+})}}
