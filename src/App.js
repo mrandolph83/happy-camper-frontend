@@ -13,6 +13,7 @@ import ReviewForm from './components/ReviewForm.js'
 import { Route, Switch, Link, withRouter } from 'react-router-dom'
 import { getCurrentUser } from "./actions/currentUser.js"
 import { connect } from "react-redux"
+import { editReviewFormData } from "./actions/reviewForm.js"
 
 class App extends React.Component  {
   
@@ -68,4 +69,4 @@ const mapStateToProps = state => {
 }
 
 
-export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
+export default withRouter(connect(mapStateToProps, { getCurrentUser, editReviewFormData  })(App));
