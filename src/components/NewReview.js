@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 
 // 
 // Destructuring, look at making form video again. Took a still with notes on it 
-const NewReviewForm = ({newReviewData, updateNewReviewForm, createReview}) => {
+const NewReviewForm = ({newReviewData, updateNewReviewForm, user_id, createReview}) => {
 
    // const {user_id, rec_area_id, description, date, picture, nature_review, amenities_review, activities_review, family_review} = formData
 
@@ -19,7 +19,8 @@ const NewReviewForm = ({newReviewData, updateNewReviewForm, createReview}) => {
 
 const handleSubmit = event => {
    event.preventDefault();
-   createReview(newReviewData)
+   createReview(
+      {...newReviewData, user_id})
 }
 
 
@@ -34,12 +35,12 @@ onChange={handleChange}
 value={user_id}
 /> */}
 
-<input
+{/* <input
 placeholder="user_id"
 name="user_id"
 onChange={handleChange}
 value={newReviewData.user_id}
-/>
+/> */}
 
 <input
 placeholder="rec_area_id"
@@ -103,9 +104,10 @@ value={newReviewData.family_review}
 )};
 
 const mapStateToProps = state => {
-   
+   const user_id = state.currentUser ? state.currentUser.id : ""
    return {
-      newReviewData: state.newReview
+      newReviewData: state.newReview,
+      user_id
 }
 }
 
