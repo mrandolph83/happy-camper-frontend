@@ -9,7 +9,7 @@ import Login from './components/Login.js'
 import Logout from './components/Logout.js'
 import Home from './components/Home.js'
 import Signup from './components/Signup'
-import NewReview from './components/NewReview.js'
+import ReviewForm from './components/ReviewForm.js'
 import { Route, Switch, Link, withRouter } from 'react-router-dom'
 import { getCurrentUser } from "./actions/currentUser.js"
 import { connect } from "react-redux"
@@ -38,7 +38,7 @@ return (
  <Route exact path='/account' component={MyAccount}/>
  <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
   <Route exact path='/' render={(props)=> loggedIn ? <PathSelection/> : <Home/>}/>
-  <Route exact path='/reviews/new' component={NewReview}/>
+  <Route exact path='/reviews/new' component={ReviewForm}/>
   </Switch>
 
   {/* Add LocationReviews as a component */}
@@ -61,6 +61,7 @@ return (
 }
 }
 const mapStateToProps = state => {
+// Data is destructured, what exactly does this mean?
   return ({
     loggedIn: !!state.currentUser
   })

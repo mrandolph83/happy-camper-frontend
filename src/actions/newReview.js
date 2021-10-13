@@ -1,7 +1,7 @@
 
 
 // sync actions
-export const updateNewReviewForm = (name, value) => {
+export const updateReviewForm = (name, value) => {
     return {
         type: "UPDATE_NEW_REVIEW_FORM", 
         formData: { name, value }
@@ -15,7 +15,7 @@ export const addReview = review => {
     }
 }
 
-export const resetNewReviewForm = (name, value) => {
+export const resetReviewFormForm = (name, value) => {
     return {
         type: "RESET_NEW_REVIEW_FORM", 
     }
@@ -67,7 +67,7 @@ export const createReview = (reviewData, history) => {
                 else {
                     dispatch(addReview(review.data))
                     history.push('/account')
-                    // dispatch(resetNewReviewForm())
+                    // dispatch(resetReviewFormForm())
                     
                     // redirects to user account to review the data
                 }
