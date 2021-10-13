@@ -1,6 +1,6 @@
 import React from 'react';
-import { updateReviewForm } from '../actions/newReview.js'
-import { createReview } from '../actions/newReview.js'
+import { updateReviewForm } from '../actions/reviewForm.js'
+import { createReview } from '../actions/reviewForm.js'
 import { connect } from 'react-redux'
 
 // Should be receiving props of current_user id, location_id
@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 
 // 
 // Destructuring, look at making form video again. Took a still with notes on it 
-const ReviewFormForm = ({newReviewData, updateReviewForm, history, user_id, createReview}) => {
+const ReviewForm = ({newReviewData, updateReviewForm, history, user_id, createReview}) => {
 
    // const {user_id, rec_area_id, description, date, picture, nature_review, amenities_review, activities_review, family_review} = formData
 
@@ -102,13 +102,13 @@ value={newReviewData.family_review}
 const mapStateToProps = state => {
    const user_id = state.currentUser ? state.currentUser.id : ""
    return {
-      newReviewData: state.newReview,
+      newReviewData: state.reviewForm,
       user_id
 }
 }
 
 
-export default connect(mapStateToProps, { updateReviewForm, createReview })(ReviewFormForm)
+export default connect(mapStateToProps, { updateReviewForm, createReview })(ReviewForm)
 
 
 
