@@ -1,3 +1,6 @@
+
+
+// sync actions
 export const updateNewReviewForm = (name, value) => {
     return {
         type: "UPDATE_NEW_REVIEW_FORM", 
@@ -10,7 +13,12 @@ export const addReview = review => {
         type: "ADD_REVIEW",
         review
     }
+}
 
+export const resetNewReviewForm = (name, value) => {
+    return {
+        type: "RESET_NEW_REVIEW_FORM", 
+    }
 }
 
         
@@ -40,7 +48,7 @@ export const getMyReviews = () => {
     }
 }
 
-export const createReview = reviewData => {
+export const createReview = (reviewData, history) => {
     console.log("reviewData is", reviewData)
     return dispatch => {
     return fetch("http://127.0.0.1:3000/api/v1/reviews", { 
@@ -58,6 +66,10 @@ export const createReview = reviewData => {
                 alert(review.error)}
                 else {
                     dispatch(addReview(review.data))
+                    history.push('/account')
+                    // dispatch(resetNewReviewForm())
+                    
+                    // redirects to user account to review the data
                 }
             })
             .catch(console.log)
