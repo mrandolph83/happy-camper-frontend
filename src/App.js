@@ -4,6 +4,7 @@ import NavBar from "./components/Nav.js"
 import RecAreaSearch from "./components/RecAreaSearch.js"
 import MainContainer from "./components/MainContainer.js";
 import PathSelection from "./components/PathSelection.js"
+import MyAccount from "./components/MyAccount.js"
 import Login from './components/Login.js'
 import Logout from './components/Logout.js'
 import Home from './components/Home.js'
@@ -34,10 +35,21 @@ return (
   with component it is the whole component and all props in the ecosystem */}
  <Route exact path='/login' component={Login}/>
  <Route exact path='/logout' component={Logout}/>
+ <Route exact path='/account' component={MyAccount}/>
  <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
   <Route exact path='/' render={(props)=> loggedIn ? <PathSelection/> : <Home/>}/>
   <Route exact path='/reviews/new' component={NewReview}/>
   </Switch>
+
+  {/* Add LocationReviews as a component */}
+  {/* Add UserFavorites as a Component */}
+  {/* Add RecAreaResults as a Component */}
+  {/* Add ExploreForm as a Component */}
+  {/* Add ExploreResuts as a Component */}
+  {/* Add DiscoverContainer as a Component (dumb, structure flexbox) */}
+  {/* Add ShareContainer as a Component (dumb, structure flexbox) */}
+  {/* Add ExploreContainer as a Component (dumc, structure flexbox) */}
+
  
 
  
