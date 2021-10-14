@@ -1,5 +1,6 @@
 import { resetLoginForm } from "./loginForm.js"
 import { resetSignupForm } from "./signupForm.js"
+import { getMyReviews, clearReviews } from "./myReviews.js"
 
 
 //synchronous action creators
@@ -39,6 +40,7 @@ export const login = (credentials, history) => {
             }
             else {
                 dispatch(setCurrentUser(response.data))
+                dispatch(getMyReviews())
                 dispatch(resetLoginForm())
                 history.push('/')
             }
@@ -89,6 +91,7 @@ export const signup = (credentials, history) => {
                 
                 dispatch(setCurrentUser(response.data))
                 // dispatch(getUserFavorites())
+                dispatch(getMyReviews())
                 dispatch(resetSignupForm())
                 history.push('/')
             }
