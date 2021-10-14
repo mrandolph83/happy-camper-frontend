@@ -8,6 +8,8 @@ export default (state = initialState, action) => {
       return state.concat(action.review)
     case "CLEAR_REVIEWS":
       return initialState
+      case "UPDATE_REVIEW":
+        return state
     default:
       return state
   }
