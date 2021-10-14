@@ -4,12 +4,14 @@ import NavBar from "./components/Nav.js"
 import RecAreaSearch from "./components/RecAreaSearch.js"
 import MainContainer from "./components/MainContainer.js";
 import PathSelection from "./components/PathSelection.js"
+import MyReviews from "./components/MyReviews.js"
+import ReviewCard from "./components/ReviewCard.js"
 import MyAccount from "./components/MyAccount.js"
 import Login from './components/Login.js'
 import Logout from './components/Logout.js'
 import Home from './components/Home.js'
 import Signup from './components/Signup'
-import ReviewForm from './components/ReviewForm.js'
+import NewReviewFormContainer from './components/ReviewFormContainerNew'
 import { Route, Switch, Link, withRouter } from 'react-router-dom'
 import { getCurrentUser } from "./actions/currentUser.js"
 import { connect } from "react-redux"
@@ -23,7 +25,7 @@ componentDidMount() {
 }
 
   render() {
-    const { loggedIn } = this.props
+    const { loggedIn, reviews } = this.props
 return (
   <div className="App">
   
@@ -37,9 +39,15 @@ return (
  <Route exact path='/login' component={Login}/>
  <Route exact path='/logout' component={Logout}/>
  <Route exact path='/account' component={MyAccount}/>
+ <Route exact path='/reviews' component={MyReviews}/>
  <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
   <Route exact path='/' render={(props)=> loggedIn ? <PathSelection/> : <Home/>}/>
-  <Route exact path='/reviews/new' component={ReviewForm}/>
+  <Route exact path='reviews/:id/edit' render={props => {
+    const review = reviews.find(review => review.id === props.match.params.id)
+  console.log(review)
+  return <ReviewCard review={review} {...props}/>
+  }}/>
+  <Route exact path='/reviews/new' component={NewReviewFormContainer}/>
   </Switch>
 
   {/* Add LocationReviews as a component */}
@@ -64,7 +72,8 @@ return (
 const mapStateToProps = state => {
 // Data is destructured, what exactly does this mean?
   return ({
-    loggedIn: !!state.currentUser
+    loggedIn: !!state.currentUser,
+    reviews: state.myReviews
   })
 }
 
