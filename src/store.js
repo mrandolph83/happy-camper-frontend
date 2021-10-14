@@ -7,6 +7,7 @@ import userFavorites from './reducers/userFavorites.js'
 import recAreaQuery from './reducers/recAreaQuery.js'
 import reviewForm from './reducers/reviewForm.js'
 import signupForm from './reducers/signupForm.js'
+import myReviews from './reducers/myReviews'
 import thunk from 'redux-thunk'
 
 const reducer = combineReducers({
@@ -14,6 +15,7 @@ const reducer = combineReducers({
   loginForm,
   userFavorites,
   reviewForm,
+  myReviews,
   recAreaForm,
   recAreaQuery,
   signupForm
