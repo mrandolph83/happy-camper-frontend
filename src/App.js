@@ -14,6 +14,7 @@ import Signup from './components/Signup'
 import NewReviewFormContainer from './components/ReviewFormContainerNew'
 import { Route, Switch, Link, withRouter } from 'react-router-dom'
 import { getCurrentUser } from "./actions/currentUser.js"
+import { getMyReviews } from "./actions/myReviews.js"
 import { connect } from "react-redux"
 import { editReviewFormData } from "./actions/reviewForm.js"
 
@@ -22,6 +23,7 @@ class App extends React.Component  {
 componentDidMount() {
 
   this.props.getCurrentUser()
+  this.props.getMyReviews()
 }
 
   render() {
@@ -42,10 +44,9 @@ return (
  <Route exact path='/reviews' component={MyReviews}/>
  <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
   <Route exact path='/' render={(props)=> loggedIn ? <PathSelection/> : <Home/>}/>
-  <Route exact path='reviews/:id/edit' render={props => {
+  <Route exact path='/reviews/:id' render={props => {
     const review = reviews.find(review => review.id === props.match.params.id)
-  console.log(review)
-  return <ReviewCard review={review} {...props}/>
+    return <ReviewCard review={review} {...props}/>
   }}/>
   <Route exact path='/reviews/new' component={NewReviewFormContainer}/>
   </Switch>
@@ -78,4 +79,4 @@ const mapStateToProps = state => {
 }
 
 
-export default withRouter(connect(mapStateToProps, { getCurrentUser, editReviewFormData  })(App));
+export default withRouter(connect(mapStateToProps, { getCurrentUser, getMyReviews, editReviewFormData  })(App));
