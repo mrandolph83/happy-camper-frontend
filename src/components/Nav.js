@@ -12,7 +12,8 @@ const NavBar = ({ currentUser, loggedIn }) => {
              <NavLink to="/rec_area_search">Discover</NavLink>
              <NavLink to="/reviews/new">Share</NavLink>
              <NavLink to="/explore">Explore</NavLink>
-             { loggedIn ? <> Welcome {currentUser.attributes.name} <Logout/></> : null }
+             
+             { loggedIn ? <> Welcome <NavLink to="/reviews"> {currentUser.attributes.name} </NavLink><Logout/></> : null }
 
         </div>
     )
