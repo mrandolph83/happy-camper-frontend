@@ -52,6 +52,7 @@ export const login = (credentials, history) => {
 export const logout = () => {
     return (dispatch) => {
         dispatch(clearCurrentUser())
+        dispatch(clearReviews())
 
 // potential future dispatch actions to put to use to fully 
 // clear state. Make actions to clear within each action/reducer
@@ -105,7 +106,7 @@ export const signup = (credentials, history) => {
 export const getCurrentUser = () => {
    
     return  dispatch => {
-
+        console.log("GEtting current user")
         return fetch("http://127.0.0.1:3000/api/v1/get_current_user", {
             credentials: "include",  
             method: "GET",
