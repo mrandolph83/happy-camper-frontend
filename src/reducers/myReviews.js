@@ -6,7 +6,11 @@ export default (state = initialState, action) => {
       return action.reviews
     case "ADD_REVIEW":
       return state.concat(action.review)
-    case "CLEAR_REVIEWS":
+    case "UPDATE_REVIEW_IN_STORE":
+      return state.map(review => review.id === action.review.id ? action.review : review)
+      case "DELETE_REVIEW_IN_STORE":
+        return state.filter(review => review.id === action.reviewId ? false : true)
+      case "CLEAR_REVIEWS":
       return initialState
     default:
       return state
