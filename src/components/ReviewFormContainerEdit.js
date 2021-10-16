@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { editReviewFormData } from '../actions/reviewForm.js'
-import { updateReview } from '../actions/myReviews.js'
+import { editReviewFormData, resetReviewForm } from '../actions/reviewForm.js'
+import { updateReview, deleteReview } from '../actions/myReviews.js'
 import ReviewForm from './ReviewForm'
 import { connect } from 'react-redux'
 
@@ -9,10 +9,16 @@ class EditReviewFormContainer extends React.Component {
 
    
 componentDidMount(){
-   
 this.props.review && this.props.editReviewFormData(this.props.review)
-
 }
+
+componentDidUpdate(prevProps) {
+    this.props.review && !prevProps.review && this.props.editReviewFormData(this.props.review)
+  }
+
+  componentWillUnmount() {
+    this.props.resetReviewForm()
+  }
 
 
 // Look into differences between making classes
@@ -24,14 +30,20 @@ this.props.review && this.props.editReviewFormData(this.props.review)
      }
 
      render() {
-        const { history, handleSubmit } = this.props 
+        const { history, handleSubmit, deleteReview, review } = this.props 
+        const reviewId = review ? review.id : null
+   
         
+        return <>
         
-        return <ReviewForm editMode handleSubmit={this.handleSubmit} />
+        <ReviewForm editMode handleSubmit={this.handleSubmit} />
+        <button onClick={()=> deleteReview(reviewId, history)}> Delete Review </button>
+
+        </>
     }
 };
 
 
 
 
-export default connect(null, { updateReview, editReviewFormData })(EditReviewFormContainer);
+export default connect(null, { updateReview, resetReviewForm, deleteReview, editReviewFormData })(EditReviewFormContainer);
