@@ -12,6 +12,7 @@ import Logout from './components/Logout.js'
 import Home from './components/Home.js'
 import Signup from './components/Signup'
 import NewReviewFormContainer from './components/ReviewFormContainerNew'
+import EditReviewFormContainer from './components/ReviewFormContainerEdit'
 import { Route, Switch, Link, withRouter } from 'react-router-dom'
 import { getCurrentUser } from "./actions/currentUser.js"
 import { getMyReviews } from "./actions/myReviews.js"
@@ -27,7 +28,7 @@ componentDidMount() {
 }
 
   render() {
-    const { loggedIn, reviews } = this.props
+    const { loggedIn, reviews, editReviewFormData } = this.props
 return (
   <div className="App">
   
@@ -41,14 +42,22 @@ return (
  <Route exact path='/login' component={Login}/>
  <Route exact path='/logout' component={Logout}/>
  <Route exact path='/account' component={MyAccount}/>
+ <Route exact path='/reviews/new' component={NewReviewFormContainer}/>
  <Route exact path='/reviews' component={MyReviews}/>
  <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
-  <Route exact path='/' render={(props)=> loggedIn ? <PathSelection/> : <Home/>}/>
-  <Route exact path='/reviews/:id' render={props => {
+ <Route exact path='/' render={(props)=> loggedIn ? <PathSelection/> : <Home/>}/>
+ <Route exact path='/reviews/:id' render={props => {
     const review = reviews.find(review => review.id === props.match.params.id)
-    return <ReviewCard review={review} {...props}/>
-  }}/>
-  <Route exact path='/reviews/new' component={NewReviewFormContainer}/>
+    return <ReviewCard review={review} {...props}/>  }}/>
+{/* PAsses review down to props. Use this method for userFavorites? */}
+<Route exact path='/reviews/:id/edit' render={props => {
+              // I need to get ???
+              const review = reviews.find(review => review.id === props.match.params.id)
+              // dispatch updateForm -> review
+              return <EditReviewFormContainer review={review} {...props}/>
+            }
+          }/>
+  
   </Switch>
 
   {/* Add LocationReviews as a component */}

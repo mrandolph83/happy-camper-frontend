@@ -19,6 +19,8 @@ export default (state = initialState, action) => {
                 [action.formData.name]: action.formData.value
                 
             }
+            case "EDIT_REVIEW_FORM_DATA":
+                return action.reviewFormData
         case "RESET_NEW_REVIEW_FORM":
             return initialState
         default:
