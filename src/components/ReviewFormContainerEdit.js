@@ -16,19 +16,18 @@ this.props.review && this.props.editReviewFormData(this.props.review)
 
 
 // Look into differences between making classes
-    handleSubmit = (event, newReviewData, user_id, history) => {
+    handleSubmit = (newReviewData, user_id) => {
     console.log("Edit review form")
-    const { updateReview, review } = this.props
-    event.preventDefault()
+    const { updateReview, review, history} = this.props
     updateReview(
-           {...newReviewData, user_id}, history)
+           {...newReviewData}, history)
      }
 
      render() {
         const { history, handleSubmit } = this.props 
         
         
-        return <ReviewForm editMode history={history} handleSubmit={this.handleSubmit} />
+        return <ReviewForm editMode handleSubmit={this.handleSubmit} />
     }
 };
 
