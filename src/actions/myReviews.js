@@ -27,6 +27,14 @@ export const clearReviews = () => {
   }
 }
 
+export const deleteReviewInStore = reviewId => {
+  return {
+      type: "DELETE_REVIEW_IN_STORE",
+      reviewId
+  }
+}
+
+
 export const getMyReviews = () => {
     return dispatch => {
       return fetch("http://127.0.0.1:3000/api/v1/reviews", {
@@ -67,9 +75,7 @@ export const createReview = (reviewData, history) => {
                 else {
                     dispatch(addReview(review.data))
                     dispatch(resetReviewForm())
-                    history.push('/account')
-                    // dispatch(resetReviewFormForm())
-                    
+                    history.push('/account')                    
                     // redirects to user account to review the data
                 }
             })
@@ -77,6 +83,8 @@ export const createReview = (reviewData, history) => {
         }
     }
 
+    
+    
     export const updateReview = (reviewData, history) => {
         console.log("update data is", reviewData)
         return dispatch => {
@@ -108,7 +116,8 @@ export const createReview = (reviewData, history) => {
                     alert(review.error)}
                     else {
                         dispatch(updateReviewInStore(review.data))
-                        history.push('/account')
+                        dispatch(resetReviewForm())
+                    history.push(`/reviews/${review.data.id}`)
                         // dispatch(resetReviewFormForm())
                         
                         // redirects to user account to review the data
@@ -117,5 +126,37 @@ export const createReview = (reviewData, history) => {
                 .catch(console.log)
             }
         }
+
+        export const deleteReview = (reviewId, history) => {
+          
+          return dispatch => {
+            
+            console.log(reviewId)
+    
+           
+          return fetch(`http://127.0.0.1:3000/api/v1/reviews/${reviewId}`, { 
+              credentials: "include",
+              method: "DELETE",
+              headers: {
+                  "Content-Type": "application/json"
+              },
+              })
+  
+              .then(r => r.json())
+              .then(review => {
+                  if (review.error) {
+                      alert(review.error)}
+                      else {
+                          dispatch(deleteReviewInStore(reviewId))
+                          dispatch(resetReviewForm())
+                      history.push('/account')
+                          // dispatch(resetReviewFormForm())
+                          
+                          // redirects to user account to review the data
+                      }
+                  })
+                  .catch(console.log)
+              }
+          }
             
             
