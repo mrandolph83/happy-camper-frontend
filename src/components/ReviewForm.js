@@ -20,25 +20,15 @@ const ReviewForm = ({newReviewData, history, updateReviewForm, myReviews, user_i
       updateReviewForm(name, value)
    }
 
-  
-  
-
-  
-
-
-
-
-  
-
 return ( 
 
  
 <form onSubmit={event => {
-   
+  event.preventDefault() 
   
   
    console.log("here we are!")
-   handleSubmit(event, newReviewData, user_id, history)}}>
+   handleSubmit(newReviewData, user_id)}}>
 
 {/* <input
 placeholder="user_id"
