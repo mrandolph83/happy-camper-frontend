@@ -6,8 +6,8 @@ import { connect } from 'react-redux'
 const NewReviewFormContainer = ({history, createReview}) => {
 
 
-    const handleSubmit = (event, newReviewData, user_id, history) => {
-        event.preventDefault()
+    const handleSubmit = (newReviewData, user_id, history) => {
+        
         createReview(
            {...newReviewData, user_id}, history)
      }
