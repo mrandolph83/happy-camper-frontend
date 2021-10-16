@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const ReviewCard = ({ review }) => {
   return (
@@ -6,8 +7,9 @@ const ReviewCard = ({ review }) => {
       <div>
         <h3>{review.attributes.description}</h3>
         <p>{review.attributes.picture}</p>
+      <Link to={`/reviews/${review.id}/edit`} params={{ testvalue: "hello" }}>Edit this review</Link>
       </div> :
-      <p> This is the trip card! </p>
+      <p>This the the Trip card with no trip!</p>
      
   )
 }
