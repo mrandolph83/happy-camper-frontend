@@ -16,7 +16,7 @@ export const addReview = review => {
 
 export const updateReviewInStore = review => {
     return {
-        type: "UPDATE_REVIEW",
+        type: "UPDATE_REVIEW_IN_STORE",
         review
     }
 }
