@@ -78,15 +78,28 @@ export const createReview = (reviewData, history) => {
     }
 
     export const updateReview = (reviewData, history) => {
-        console.log("reviewData is", reviewData)
+        console.log("update data is", reviewData)
         return dispatch => {
-        return fetch(`http://127.0.0.1:3000/api/v1/reviews/${reviewData.id}`, { 
+          const reviewId = reviewData.id
+          console.log(reviewId)
+  
+          const sendableReviewData = {
+            date: reviewData.date,
+            description: reviewData.description,
+            picture: reviewData.picture,
+            rec_area_id: reviewData.rec_area_id,
+            nature_review: reviewData.nature_review,
+            amenities_review: reviewData.amenities_review,
+            activities_review: reviewData.activities_review,
+            family_review: reviewData.family_review
+          }
+        return fetch(`http://127.0.0.1:3000/api/v1/reviews/${reviewId}`, { 
             credentials: "include",
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
-                body: JSON.stringify(reviewData)
+                body: JSON.stringify(sendableReviewData)
             })
 
             .then(r => r.json())
