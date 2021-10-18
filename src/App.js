@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import NavBar from "./components/Nav.js"
 import PathSelection from "./components/PathSelection.js"
-import DiscoverContainer from "./components/DiscoverContainer.js"
+import RecAreaSearch from "./components/RecAreaSearch.js"
 import MyReviews from "./components/MyReviews.js"
 import ReviewCard from "./components/ReviewCard.js"
 import MyAccount from "./components/MyAccount.js"
@@ -41,7 +41,7 @@ return (
  <Route exact path='/logout' component={Logout}/>
  <Route exact path='/account' component={MyAccount}/>
  <Route exact path='/reviews/new' component={NewReviewFormContainer}/>
- <Route exact path='/discover' component={DiscoverContainer}/>
+ <Route exact path='/discover' component={RecAreaSearch}/>
  <Route exact path='/reviews' component={MyReviews}/>
  <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
  
