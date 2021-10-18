@@ -3,13 +3,13 @@
 export const recAreaResults = results => {
     return {
         type: "REC_AREA_QUERY_RESULTS",
-        payload: results
+        results
     }
 }
 
 
 //async action creators
-export const recAreaUserSearch = recSearchParams => {
+export const recAreaUserSearch = (recSearchParams, history) => {
     console.log("recSearch params are", recSearchParams)
     
     return dispatch => {
@@ -26,7 +26,9 @@ export const recAreaUserSearch = recSearchParams => {
 
         .then(r => r.json())
         .then(editedParkList => {
-          console.log(editedParkList)
+            console.log(editedParkList)
+          dispatch(recAreaResults(editedParkList.data))
+          history.push('/account')
           
             
 })}}

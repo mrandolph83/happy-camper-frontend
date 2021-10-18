@@ -1,12 +1,4 @@
-const initialState = {
-    recAreaId: "",
-    name: "",
-    city: "",
-    stateCode: "",
-    description: "",
-
-   
-}
+const initialState = null
 
 export default (state = initialState, action) => {
     switch (action.type) {
