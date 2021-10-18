@@ -25,12 +25,103 @@ const RecAreaSearch = ({recAreaFormData, updateRecAreaForm, recAreaUserSearch}) 
 return (
     <form onSubmit={handleSubmit}> 
         
-        <input placeholder="activity1" value={recAreaFormData.activity1} name="activity1" type="text" onChange={handleInputChange} />
+        {/* <input placeholder="activity1" value={recAreaFormData.activity1} name="activity1" type="text" onChange={handleInputChange} /> */}
+        <label> Choose an activity: </label>
+        <select name="activity1" id="activity-select" onChange={handleInputChange} value={recAreaFormData.activity1}>
+            <option value="">--SELECT AN ACTIVIVITY--</option>
+            <option value="5">BIKING</option>
+            <option value="6">BOATING</option>
+            <option value="7">CLIMBING</option>
+            <option value="8">HISTORIC/CULTURAL SITE</option>
+            <option value="9">CAMPING</option>
+            <option value="11">FISHING</option>
+            <option value="14">HIKING</option>
+            <option value="15">HORSEBACK RIDING</option>
+            <option value="16">HUNTING</option>
+            <option value="22">WINTER SPORTS</option>
+            <option value="23">RECREATIONAL VEHICLES</option>
+            <option value="106">SWIMMING</option>
+            <option value="100007">KAYAKING</option>
+            <option value="100008">CANOEING</option>
+            <option value="100010">BEACH CAMPING</option>
+            <option value="100001">SNOWMOBILE</option>
+            <option value="100003">OFF ROAD VEHICLE TRAILS</option>
+            <option value="100016">SURFING</option>
+            <option value="100034">WHITEWATER RAFTING</option>
+            <option value="100036">BACKPACKING</option>
+            <option value="100037">SAILING</option>
+            <option value="100038">SCUBA DIVING</option>
+            <option value="100080">CAVING</option>
+        </select>
+  
+
+
         {/* <input placeholder="activity2" value={recAreaFormData.activity2} name="activity2" type="text" onChange={handleInputChange} />
         <input placeholder="activity3" value={recAreaFormData.activity3} name="activity3" type="text" onChange={handleInputChange} />
         <input placeholder="activity4" value={recAreaFormData.activity4} name="activity4" type="text" onChange={handleInputChange} />
         <input placeholder="activity5" value={recAreaFormData.activity5} name="activity5" type="text" onChange={handleInputChange} /> */}
-        <input placeholder="stateCode1" value={recAreaFormData.stateCode1} name="stateCode1" type="text" onChange={handleInputChange} />
+        {/* <input placeholder="stateCode1" value={recAreaFormData.stateCode1} name="stateCode1" type="text" onChange={handleInputChange} /> */}
+
+        <label> Choose a State: </label>
+        <select name="stateCode1" id="state-select" onChange={handleInputChange} value={recAreaFormData.stateCode1}>
+            <option value="">--SELECT A STATE--</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+        </select>
+  
+
+
+
+
         {/* <input placeholder="stateCode2" value={recAreaFormData.stateCode2} name="stateCode2" type="text" onChange={handleInputChange} />
         <input placeholder="stateCode3" value={recAreaFormData.stateCode3} name="stateCode3" type="text" onChange={handleInputChange} /> */}
         <input placeholder="keywords" value={recAreaFormData.keywords} name="keywords" type="text" onChange={handleInputChange} />
