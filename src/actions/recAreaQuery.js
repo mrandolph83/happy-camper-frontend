@@ -12,6 +12,7 @@ export const recAreaResults = results => {
 export const recAreaUserSearch = recSearchParams => {
     console.log("recSearch params are", recSearchParams)
     
+    return dispatch => {
     
 
         return fetch("http://127.0.0.1:3000/api/v1/rec_area_search", {
@@ -26,5 +27,6 @@ export const recAreaUserSearch = recSearchParams => {
         .then(r => r.json())
         .then(editedParkList => {
           console.log(editedParkList)
+          
             
-})}
+})}}
