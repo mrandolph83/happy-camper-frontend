@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateRecAreaForm } from "../actions/recAreaForm.js"
 import { recAreaUserSearch } from "../actions/recAreaQuery.js"
+import DiscoverResults from "./DiscoverResults.js"
 
 const RecAreaSearch = ({recAreaFormData, updateRecAreaForm, history, recAreaUserSearch}) => {
 
@@ -23,6 +24,9 @@ const RecAreaSearch = ({recAreaFormData, updateRecAreaForm, history, recAreaUser
 // You can set a data type of "number" that has parameters, use this for review later
 
 return (
+    <div>
+    <img className="top-banner" src="../images/top-banner-discover.png" />
+        
     <form onSubmit={handleSubmit}> 
         
         {/* <input placeholder="activity1" value={recAreaFormData.activity1} name="activity1" type="text" onChange={handleInputChange} /> */}
@@ -54,13 +58,6 @@ return (
             <option value="100080">CAVING</option>
         </select>
   
-
-
-        {/* <input placeholder="activity2" value={recAreaFormData.activity2} name="activity2" type="text" onChange={handleInputChange} />
-        <input placeholder="activity3" value={recAreaFormData.activity3} name="activity3" type="text" onChange={handleInputChange} />
-        <input placeholder="activity4" value={recAreaFormData.activity4} name="activity4" type="text" onChange={handleInputChange} />
-        <input placeholder="activity5" value={recAreaFormData.activity5} name="activity5" type="text" onChange={handleInputChange} /> */}
-        {/* <input placeholder="stateCode1" value={recAreaFormData.stateCode1} name="stateCode1" type="text" onChange={handleInputChange} /> */}
 
         <label> Choose a State: </label>
         <select name="stateCode1" id="state-select" onChange={handleInputChange} value={recAreaFormData.stateCode1}>
@@ -118,23 +115,13 @@ return (
             <option value="WY">Wyoming</option>
         </select>
   
-
-
-
-
-        {/* <input placeholder="stateCode2" value={recAreaFormData.stateCode2} name="stateCode2" type="text" onChange={handleInputChange} />
-        <input placeholder="stateCode3" value={recAreaFormData.stateCode3} name="stateCode3" type="text" onChange={handleInputChange} /> */}
         <input placeholder="keywords" value={recAreaFormData.keywords} name="keywords" type="text" onChange={handleInputChange} />
         <input type="submit" value="Search Rec Areas"/>
     </form>
+    <DiscoverResults/>
+    </div>
     )
 }
-
-// Turns the state into props within this component. Sructured
-// like: {
-//     username: mrandolph83
-//     password: password
-// }
 
 const mapStateToProps = state => {
     return {
