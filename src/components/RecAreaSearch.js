@@ -4,7 +4,7 @@ import { updateRecAreaForm } from "../actions/recAreaForm.js"
 import { recAreaUserSearch } from "../actions/recAreaQuery.js"
 import DiscoverResults from "./DiscoverResults.js"
 
-const RecAreaSearch = ({recAreaFormData, updateRecAreaForm, history, recAreaUserSearch}) => {
+const RecAreaSearch = ({recAreaFormData, updateRecAreaForm, history, user_id, recAreaUserSearch}) => {
 
     const handleInputChange = event => {
         const { name, value } = event.target
@@ -15,19 +15,24 @@ const RecAreaSearch = ({recAreaFormData, updateRecAreaForm, history, recAreaUser
         updateRecAreaForm(updatedFormInfo)
     }
 
-    const handleSubmit = event => {
-        event.preventDefault()  
-        recAreaUserSearch(recAreaFormData, history)
+    const handleSubmit = (recAreaFormData, user_id) => {
+        console.log(user_id)
+        recAreaUserSearch(recAreaFormData, history, user_id)
     }
 
 // Set hidden values on form for the activities and their numbers (ie "1, ")
 // You can set a data type of "number" that has parameters, use this for review later
 
 return (
+    
     <div>
     <img className="top-banner" src="../images/top-banner-discover.png" />
         
-    <form onSubmit={handleSubmit}> 
+    
+    <form onSubmit={event => {
+  event.preventDefault() 
+   handleSubmit(recAreaFormData, user_id)}}>
+    
         
         {/* <input placeholder="activity1" value={recAreaFormData.activity1} name="activity1" type="text" onChange={handleInputChange} /> */}
         <label> Choose an activity: </label>
@@ -118,14 +123,15 @@ return (
         <input placeholder="keywords" value={recAreaFormData.keywords} name="keywords" type="text" onChange={handleInputChange} />
         <input type="submit" value="Search Rec Areas"/>
     </form>
-    <DiscoverResults/>
+    <DiscoverResults user_id/>
     </div>
     )
 }
 
 const mapStateToProps = state => {
     return {
-       recAreaFormData: state.recAreaForm
+       recAreaFormData: state.recAreaForm,
+       user_id: state.currentUser
     }
 }
 
