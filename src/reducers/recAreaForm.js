@@ -1,12 +1,6 @@
 const initialState = {
     activity1: "",
-    activity2: "",
-    activity3: "",
-    activity4: "",
-    activity5: "",
     stateCode1: "",
-    stateCode2: "",
-    stateCode3: "",
     keywords: ""
 }
 
