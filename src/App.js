@@ -8,6 +8,8 @@ import ReviewCard from "./components/ReviewCard.js"
 import MyAccount from "./components/MyAccount.js"
 import Logout from './components/Logout.js'
 import Home from './components/Home.js'
+import DiscoverResults from './components/DiscoverResults.js'
+import RecAreaCard from './components/RecAreaCard.js'
 import Signup from './components/Signup'
 import NewReviewFormContainer from './components/ReviewFormContainerNew'
 import EditReviewFormContainer from './components/ReviewFormContainerEdit'
@@ -16,6 +18,7 @@ import { getCurrentUser } from "./actions/currentUser.js"
 import { getMyReviews } from "./actions/myReviews.js"
 import { connect } from "react-redux"
 import { editReviewFormData } from "./actions/reviewForm.js"
+import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from 'react-dom/cjs/react-dom.development';
 
 class App extends React.Component  {
   
@@ -40,11 +43,16 @@ return (
  <Route exact path='/' render={(props)=> loggedIn ? <PathSelection/> : <Home/>}/>
  <Route exact path='/logout' component={Logout}/>
  <Route exact path='/account' component={MyAccount}/>
+ <Route exact path='/discover_results' component={DiscoverResults}/>
+
  <Route exact path='/reviews/new' component={NewReviewFormContainer}/>
  <Route exact path='/discover' component={RecAreaSearch}/>
  <Route exact path='/reviews' component={MyReviews}/>
  <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
- 
+ {/* <Route exact path='/rec_areas' component={DiscoverResults}/> */}
+ {/* <Route exact path='/rec_areas/:id' render={props => {
+    const recArea = recAreas.find(recArea => recArea.id === props.match.params.id)
+    return <RecAreaCard recArea={recArea} {...props}/>  }}/> */}
  <Route exact path='/reviews/:id' render={props => {
     const review = reviews.find(review => review.id === props.match.params.id)
     return <ReviewCard review={review} {...props}/>  }}/>
@@ -83,6 +91,7 @@ const mapStateToProps = state => {
   return ({
     loggedIn: !!state.currentUser,
     reviews: state.myReviews
+    
   })
 }
 
