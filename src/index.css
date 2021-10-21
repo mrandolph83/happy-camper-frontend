@@ -5,6 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+    max-width: 960px;
+    margin: auto;
+    font-family: sans-serif;
+    line-height: 1.5;
+    background-image: url("/images/mountain-bg-1440.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;  
 }
 
 code {
