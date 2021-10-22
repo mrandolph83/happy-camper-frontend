@@ -1,16 +1,10 @@
 import React from 'react';
 import { updateReviewForm } from '../actions/reviewForm.js'
 import { connect } from 'react-redux'
-import myReviews from '../reducers/myReviews.js';
-
-// Should be receiving props of current_user id, location_id
 
 
-// 
-// Destructuring, look at making form video again. Took a still with notes on it 
-const ReviewForm = ({newReviewData, history, updateReviewForm, myReviews, user_id, review, handleSubmit, editMode}) => {
+const ReviewForm = ({newReviewData, updateReviewForm, user_id, handleSubmit, editMode}) => {
 
-   // const {user_id, rec_area_id, description, date, picture, nature_review, amenities_review, activities_review, family_review} = formData
 
    
 
@@ -30,18 +24,11 @@ return (
    console.log("here we are!")
    handleSubmit(newReviewData, user_id)}}>
 
-{/* <input
-placeholder="user_id"
-name="user_id"
-onChange={handleChange}
-value={user_id}
-/> */}
 
-
-<input
-placeholder="rec_area_id"
-name="rec_area_id"
-onChange={handleChange}
+   <input
+   placeholder="rec_area_id"
+   name="rec_area_id"
+   onChange={handleChange}
 
 value={newReviewData.rec_area_id} 
 />
