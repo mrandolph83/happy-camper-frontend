@@ -8,7 +8,7 @@ const PathSelection = ({}) => (
     <span> 
     <Link to="/rec_area_search"> DISCOVER </Link> 
     <Link to="/reviews/new"> SHARE </Link>
-    <Link to="/explore"> EXPLORE</Link>
+    {/* <Link to="/explore"> EXPLORE</Link> */}
     </span>
     </div>
 );

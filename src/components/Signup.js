@@ -34,11 +34,6 @@ const Signup = ({signupForm, updateSignupForm, signup, history }) => {
     )
 }
 
-// Turns the state into props within this component. Sructured
-// like: {
-//     username: mrandolph83
-//     password: password
-// }
 
 const mapStateToProps = state => {
     return {

@@ -15,7 +15,7 @@ return (
 <h1 className="rec-show-attributes">{props.recArea.attributes.name}</h1>
 <h4>Activities:</h4>
 <p>{props.recArea.attributes.activities}</p>
-<p> <a href={`https://www.google.com/maps/dir//'${props.recArea.attributes.latitude},${props.recArea.attributes.longitude}`} target="_blank">Get Directions</a></p>
+<p> <a href={`https://www.google.com/maps/dir//${props.recArea.attributes.latitude}, ${props.recArea.attributes.longitude}`} target="_blank">Get Directions</a></p>
 <p>{props.recArea.attributes.description}</p>
 </div>
 

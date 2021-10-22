@@ -74,7 +74,7 @@ export const createReview = (reviewData, history) => {
                 else {
                     dispatch(addReview(review.data))
                     dispatch(resetReviewForm())
-                    history.push('/')                    
+                    history.push('/reviews')                    
                     // redirects to user account to review the data
                 }
             })
