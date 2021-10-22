@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const PathSelection = ({}) => (
+const PathSelection = () => (
     <div>
         <h2>Choose Your Path</h2>
 

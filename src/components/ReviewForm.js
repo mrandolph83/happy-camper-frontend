@@ -21,7 +21,7 @@ return (
   event.preventDefault() 
   
   
-   console.log("here we are!")
+   
    handleSubmit(newReviewData, user_id)}}>
 
 

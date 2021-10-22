@@ -57,6 +57,17 @@ export const getMyReviews = () => {
 
 export const createReview = (reviewData, history) => {
     console.log("reviewData is", reviewData)
+    const parseIntData = {
+      user_id: parseInt(reviewData.user_id),
+      rec_area_id: parseInt(reviewData.rec_area_id),
+      // date: " ",
+      description: reviewData.description,
+      picture: reviewData.picture,
+      nature_review: parseInt(reviewData.nature_review),
+      amenities_review: parseInt(reviewData.amenities_review),
+      activities_review: parseInt(reviewData.activities_review),
+      family_review: parseInt(reviewData.family_review),
+    }
     return dispatch => {
     return fetch("http://127.0.0.1:3000/api/v1/reviews", { 
         credentials: "include",
@@ -64,7 +75,7 @@ export const createReview = (reviewData, history) => {
         headers: {
             "Content-Type": "application/json"
         },
-            body: JSON.stringify(reviewData)
+            body: JSON.stringify(parseIntData)
         })
 
         .then(r => r.json())
@@ -74,7 +85,7 @@ export const createReview = (reviewData, history) => {
                 else {
                     dispatch(addReview(review.data))
                     dispatch(resetReviewForm())
-                    history.push('/reviews')                    
+                    history.push('/')                    
                     // redirects to user account to review the data
                 }
             })

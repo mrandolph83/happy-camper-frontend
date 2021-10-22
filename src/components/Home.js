@@ -3,7 +3,7 @@ import Login from './Login.js'
 
 import { Link } from 'react-router-dom'
 
-const Home = ({}) => (
+const Home = () => (
     <div>
         <p>"Adopt the pace of nature.{'\n'} Her secret is patience."</p> {'\n'} 
         <h3>-Ralph Waldo Emerson</h3>

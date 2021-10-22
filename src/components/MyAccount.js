@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MyAccount = ({}) => (
+const MyAccount = () => (
     <div>
         <h2>User Info</h2>
         <p>User favorites on the left side in a list, 
