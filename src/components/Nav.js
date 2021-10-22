@@ -7,15 +7,19 @@ import Logout from './Logout.js'
 const NavBar = ({ currentUser, loggedIn }) => {
 
     return (
+        <>
+      <div><img className="top-logo" src= "/images/logo-banner.png" align="center"/>
+      </div>
         <div className="NavBar"> 
             
-             <NavLink to="/discover">Discover</NavLink>
+             <h4><NavLink to="/rec_area_search">Discover</NavLink>
              <NavLink to="/reviews/new">Share</NavLink>
-             <NavLink to="/explore">Explore</NavLink>
+             <NavLink to="/explore">Explore</NavLink></h4>
              
              { loggedIn ? <> Welcome <NavLink to="/reviews"> {currentUser.attributes.name} </NavLink><Logout/></> : null }
 
         </div>
+        </>
     )
 }
 
