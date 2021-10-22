@@ -34,7 +34,6 @@ export const deleteReviewInStore = reviewId => {
   }
 }
 
-
 export const getMyReviews = () => {
     return dispatch => {
       return fetch("http://127.0.0.1:3000/api/v1/reviews", {
@@ -75,7 +74,7 @@ export const createReview = (reviewData, history) => {
                 else {
                     dispatch(addReview(review.data))
                     dispatch(resetReviewForm())
-                    history.push('/account')                    
+                    history.push('/')                    
                     // redirects to user account to review the data
                 }
             })
