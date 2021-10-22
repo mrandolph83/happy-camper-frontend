@@ -20,47 +20,42 @@ const RecAreaSearch = ({recAreaFormData, updateRecAreaForm, history, user_id, re
         recAreaUserSearch(recAreaFormData, history, user_id)
     }
 
-// Set hidden values on form for the activities and their numbers (ie "1, ")
-// You can set a data type of "number" that has parameters, use this for review later
-
 return (
     
     <div>
-    <img className="top-banner" src="../images/top-banner-discover.png" />
+    <p><img className="top-banner" src="../images/top-banner-discover.png" align="left" /></p>
         
     
     <form onSubmit={event => {
   event.preventDefault() 
    handleSubmit(recAreaFormData, user_id)}}>
-    
-        
-        {/* <input placeholder="activity1" value={recAreaFormData.activity1} name="activity1" type="text" onChange={handleInputChange} /> */}
+
         <label> Choose an activity: </label>
         <select name="activity1" id="activity-select" onChange={handleInputChange} value={recAreaFormData.activity1}>
             <option value="">--SELECT AN ACTIVIVITY--</option>
-            <option value="5">BIKING</option>
-            <option value="6">BOATING</option>
-            <option value="7">CLIMBING</option>
-            <option value="8">HISTORIC/CULTURAL SITE</option>
-            <option value="9">CAMPING</option>
-            <option value="11">FISHING</option>
-            <option value="14">HIKING</option>
-            <option value="15">HORSEBACK RIDING</option>
-            <option value="16">HUNTING</option>
-            <option value="22">WINTER SPORTS</option>
-            <option value="23">RECREATIONAL VEHICLES</option>
-            <option value="106">SWIMMING</option>
-            <option value="100007">KAYAKING</option>
-            <option value="100008">CANOEING</option>
-            <option value="100010">BEACH CAMPING</option>
-            <option value="100001">SNOWMOBILE</option>
-            <option value="100003">OFF ROAD VEHICLE TRAILS</option>
-            <option value="100016">SURFING</option>
-            <option value="100034">WHITEWATER RAFTING</option>
-            <option value="100036">BACKPACKING</option>
-            <option value="100037">SAILING</option>
-            <option value="100038">SCUBA DIVING</option>
-            <option value="100080">CAVING</option>
+            <option value="BIKING">BIKING</option>
+            <option value="BOATING">BOATING</option>
+            <option value="CLIMBING">CLIMBING</option>
+            <option value="HISTORIC/CULTURAL SITE">HISTORIC/CULTURAL SITE</option>
+            <option value="CAMPING">CAMPING</option>
+            <option value="FISHING">FISHING</option>
+            <option value="HIKING">HIKING</option>
+            <option value="HORSEBACK RIDING">HORSEBACK RIDING</option>
+            <option value="HUNTING">HUNTING</option>
+            <option value="WINTER SPORTS">WINTER SPORTS</option>
+            <option value="RECREATIONAL VEHICLES">RECREATIONAL VEHICLES</option>
+            <option value="SWIMMING">SWIMMING</option>
+            <option value="KAYAKING">KAYAKING</option>
+            <option value="CANOEING">CANOEING</option>
+            <option value="BEACH CAMPING">BEACH CAMPING</option>
+            <option value="SNOWMOBILE">SNOWMOBILE</option>
+            <option value="OFF ROAD VEHICLE TRAILS">OFF ROAD VEHICLE TRAILS</option>
+            <option value="SURFING">SURFING</option>
+            <option value="WHITEWATER RAFTING">WHITEWATER RAFTING</option>
+            <option value="BACKPACKING">BACKPACKING</option>
+            <option value="SAILING">SAILING</option>
+            <option value="SCUBA DIVING">SCUBA DIVING</option>
+            <option value="CAVING">CAVING</option>
         </select>
   
 
