@@ -16,7 +16,8 @@ export const recAreaUserSearch = (recSearchParams, history) => {
     
 
         return fetch("http://127.0.0.1:3000/api/v1/rec_area_search", {
-            credentials: "include", 
+            
+        credentials: "include", 
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -28,7 +29,34 @@ export const recAreaUserSearch = (recSearchParams, history) => {
         .then(editedParkList => {
             console.log(editedParkList)
           dispatch(recAreaResults(editedParkList.data))
-          history.push('/account')
+          history.push('/rec_areas')
+          
           
             
 })}}
+
+// export const recAreaShowPage = (, history) => {
+//     console.log("recSearch params are", recSearchParams)
+    
+//     return dispatch => {
+    
+
+//         return fetch("http://127.0.0.1:3000/api/v1/rec_area_search", {
+            
+//         credentials: "include", 
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify(recSearchParams)
+//         })
+
+//         .then(r => r.json())
+//         .then(editedParkList => {
+//             console.log(editedParkList)
+//           dispatch(recAreaResults(editedParkList.data))
+//           history.push('/rec_areas')
+          
+          
+            
+// })}}
