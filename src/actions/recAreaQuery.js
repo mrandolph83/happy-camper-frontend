@@ -7,13 +7,10 @@ export const recAreaResults = results => {
     }
 }
 
-
 //async action creators
 export const recAreaUserSearch = (recSearchParams, history) => {
     
     return dispatch => {
-    
-
         return fetch("http://127.0.0.1:3000/api/v1/rec_area_search", {
             
         credentials: "include", 
@@ -27,8 +24,6 @@ export const recAreaUserSearch = (recSearchParams, history) => {
         .then(r => r.json())
         .then(editedParkList => {
           dispatch(recAreaResults(editedParkList.data))
-          history.push('/rec_areas')
-          
-          
+          history.push('/rec_areas')              
             
 })}}
