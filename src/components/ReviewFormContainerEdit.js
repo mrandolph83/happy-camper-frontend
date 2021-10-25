@@ -22,7 +22,7 @@ componentDidUpdate(prevProps) {
 
 
 // Look into differences between making classes
-    handleSubmit = (newReviewData, user_id) => {
+    handleSubmit = (newReviewData) => {
     console.log("Edit review form")
     const { updateReview, history} = this.props
     updateReview(

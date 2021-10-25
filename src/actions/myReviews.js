@@ -34,6 +34,13 @@ export const deleteReviewInStore = reviewId => {
   }
 }
 
+export const seedReviewId = recAreaId => {
+return {
+  type: "SEED_REC_AREA_ID_TO_REVIEW",
+  recAreaId
+}
+}
+
 export const getMyReviews = () => {
     return dispatch => {
       return fetch("http://127.0.0.1:3000/api/v1/reviews", {
@@ -56,10 +63,11 @@ export const getMyReviews = () => {
   }
 
 export const createReview = (reviewData, history) => {
+    
     console.log("reviewData is", reviewData)
     const parseIntData = {
       user_id: parseInt(reviewData.user_id),
-      rec_area_id: parseInt(reviewData.rec_area_id),
+      rec_area_id: reviewData.rec_area_id,
       // date: " ",
       description: reviewData.description,
       picture: reviewData.picture,

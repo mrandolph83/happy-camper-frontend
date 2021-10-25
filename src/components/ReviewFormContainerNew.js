@@ -3,15 +3,16 @@ import { createReview } from '../actions/myReviews.js'
 import ReviewForm from './ReviewForm'
 import { connect } from 'react-redux'
 
-const NewReviewFormContainer = ({history, createReview}) => {
+const NewReviewFormContainer = ({history, match, createReview}) => {
 
-
-    const handleSubmit = (newReviewData, user_id, history) => {
-        
+    
+    const handleSubmit = (newReviewData, user_id, rec_area_id, history) => {
+        console.log(user_id)
+        console.log(rec_area_id)
         createReview(
-           {...newReviewData, user_id}, history)
+           {...newReviewData, user_id, rec_area_id}, history)
      }
 
-     return <ReviewForm history={history} handleSubmit={handleSubmit} />
+     return <ReviewForm rec_area_id={match.params.id} history={history} handleSubmit={handleSubmit} />
 };
 export default connect(null, { createReview })(NewReviewFormContainer);
