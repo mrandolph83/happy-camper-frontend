@@ -77,9 +77,19 @@ option {
   transform: translate(-50%, -50%);
 }
 
+/* Home Page */
+
+.login-elements {
+  position: absolute;
+  top: 200px;
+  left: 300px;
+
+}
+
 .active {
   color: green;
 }
+
 
 .top-banner {
   width: 600px;
@@ -100,7 +110,6 @@ option {
 
 .rec-show-attributes {
   text-align: left;
-
 
 }
 
