@@ -40,7 +40,7 @@ return (
  <Route exact path='/' render={(props)=> loggedIn ? <PathSelection/> : <Home/>}/>
  <Route exact path='/logout' component={Logout}/>
  <Route exact path='/rec_areas' component={DiscoverResults}/>
- <Route exact path='/reviews/new' component={NewReviewFormContainer}/>
+ <Route exact path='/rec_areas/:id/reviews/new' render = {props => <NewReviewFormContainer match = {props.match} history = {props.history} />}/>
  <Route exact path='/rec_area_search' component={RecAreaSearch}/>
  <Route exact path='/reviews' component={MyReviews}/>
  <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
