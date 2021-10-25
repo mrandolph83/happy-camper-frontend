@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 const NewReviewFormContainer = ({history, match, createReview}) => {
 
     
-    const handleSubmit = (newReviewData, user_id, rec_area_id, history) => {
+    const handleSubmit = (newReviewData, user_id, rec_area_id) => {
         console.log(user_id)
         console.log(rec_area_id)
         createReview(
