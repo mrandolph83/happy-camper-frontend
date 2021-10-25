@@ -2,6 +2,8 @@ import React from 'react'
 import { createUserFavorites } from '../actions/userFavorite'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { seedReviewId } from '../actions/myReviews.js'
+import RecAreaReviewsDisplay from './RecAreaReviewsDisplay'
 
 
 const RecAreaCard = (props) => {
@@ -17,20 +19,41 @@ return (
 <p>{props.recArea.attributes.activities}</p>
 <p> <a href={`https://www.google.com/maps/dir//${props.recArea.attributes.latitude}, ${props.recArea.attributes.longitude}`} target="_blank">Get Directions</a></p>
 <p>{props.recArea.attributes.description}</p>
+<div><RecAreaReviewsDisplay reviews = {props.recArea.attributes.reviews}/></div>
+
 </div>
 
+<div>
 <form onSubmit={event => {
     event.preventDefault()
   const rec_area_id = props.recArea.id
-    const user_id = props.currentUser.id
-   createUserFavorites(rec_area_id, user_id)
+  console.log(rec_area_id)
+  props.history.push(`/rec_areas/${rec_area_id}/reviews/new`)
+    
+//   seedReviewId(rec_area_id)
    }}>
 
+{/* <Link to={'/reviews/new'}> Make a</Link> */}
 <button type="submit">Click to Review</button>
+
 </form>
+</div>
+
+
+
+
+
+
+
+
+
+
 </>
 
-)}
+
+)
+
+}
 
 const mapStateToProps = state => {
     return {
@@ -39,4 +62,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { createUserFavorites })(RecAreaCard)
+export default connect(mapStateToProps, { seedReviewId })(RecAreaCard)
