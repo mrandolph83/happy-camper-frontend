@@ -75,19 +75,25 @@ option {
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
+  
 }
 
 /* Home Page */
 
 .login-elements {
   position: absolute;
-  top: 200px;
-  left: 300px;
+  top: 225px;
+  left: 400px;
+  color: white;
 
 }
 
 .active {
-  color: green;
+  color: #ffb30f;
+}
+
+.link {
+  color: white;
 }
 
 

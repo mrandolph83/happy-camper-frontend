@@ -9,7 +9,7 @@ const PathSelection = () => (
 
     <span> 
     <Link to="/rec_area_search"> <img className="path-sub-banners" height="300px" src="../images/discover-path.png" /> </Link> 
-    <Link to="/reviews/new"> <img className="path-sub-banners" height="300px" src="../images/my-reviews-path.png" />  </Link>
+    <Link to="/reviews"> <img className="path-sub-banners" height="300px" src="../images/my-reviews-path.png" />  </Link>
     {/* <Link to="/explore"> EXPLORE</Link> */}
     </span>
     </div>

@@ -13,8 +13,10 @@ const RecAreaReviewsDisplay = ({reviews}) => {
     
 
     
-    <h3>{review.activities_review}</h3>
-    <h3>{review.description}</h3>
+    <h3>{review.description}</h3> 
+    <p><em>Activity Review: {review.activities_review} </em> <em>Amenities Review: </em>{review.amenities_review}
+    <em>Family Review: </em>{review.family_review}<em>Nature Review: </em>{review.nature_review}</p>
+    
     
 
     </>

@@ -29,8 +29,8 @@ return (
     <form onSubmit={event => {
   event.preventDefault() 
    handleSubmit(recAreaFormData, user_id)}}>
-
-        <label> Choose an activity: </label>
+       <h2>Search by Activity and/or State:</h2>
+        <label> ACTIVITY: </label>
         <select name="activity1" id="activity-select" onChange={handleInputChange} value={recAreaFormData.activity1}>
             <option value="">--SELECT AN ACTIVIVITY--</option>
             <option value="BIKING">BIKING</option>
@@ -59,7 +59,7 @@ return (
         </select>
   
 
-        <label> Choose a State: </label>
+        <label> STATE: </label>
         <select name="stateCode1" id="state-select" onChange={handleInputChange} value={recAreaFormData.stateCode1}>
             <option value="">--SELECT A STATE--</option>
             <option value="AL">Alabama</option>
@@ -114,8 +114,12 @@ return (
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
         </select>
+
+        <h3>or</h3>
+
+        <h2>Search By Name:</h2>
   
-        <input placeholder="keywords" value={recAreaFormData.keywords} name="keywords" type="text" onChange={handleInputChange} />
+        <h3><input placeholder="keywords" value={recAreaFormData.keywords} name="keywords" type="text" onChange={handleInputChange} /></h3>
         <input type="submit" value="Search Rec Areas"/>
     </form>
     <DiscoverResults user_id/>

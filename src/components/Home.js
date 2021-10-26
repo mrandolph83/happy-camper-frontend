@@ -6,7 +6,9 @@ const Home = () => (
     <div>
         <img className="home-fire" src="../images/fire.gif" />
        <div className="login-elements"> <h3>"Adopt the pace of nature.{'\n'} Her secret is patience."</h3> {'\n'} 
-        <h3>-Ralph Waldo Emerson</h3>
+        <h3>-Ralph Waldo Emerson-</h3>
+        <h3> </h3>
+        <h3> </h3>
         <span><Login/> <Link to="/signup"> MAKE AN ACCOUNT </Link> </span>
         </div>
         </div>

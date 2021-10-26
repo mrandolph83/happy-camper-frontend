@@ -1,4 +1,8 @@
 import { resetReviewForm } from './reviewForm'
+import { Redirect } from 'react-router-dom'
+
+
+
 // synchronous actions
 export const setMyReviews = reviews => {
   return {
@@ -93,7 +97,9 @@ export const createReview = (reviewData, history) => {
                 else {
                     dispatch(addReview(review.data))
                     dispatch(resetReviewForm())
-                    history.push('/')                    
+                    history.push(`/reviews/${review.data.id}`)
+
+
                     // redirects to user account to review the data
                 }
             })
@@ -134,6 +140,9 @@ export const createReview = (reviewData, history) => {
                     alert(review.error)}
                     else {
                         dispatch(updateReviewInStore(review.data))
+                        console.log(review.data)
+                        console.log(history)
+
                         dispatch(resetReviewForm())
                     history.push(`/reviews/${review.data.id}`)
                         // dispatch(resetReviewFormForm())
@@ -167,7 +176,7 @@ export const createReview = (reviewData, history) => {
                       else {
                           dispatch(deleteReviewInStore(reviewId))
                           dispatch(resetReviewForm())
-                      history.push('/account')
+                      history.push('/reviews')
                           // dispatch(resetReviewFormForm())
                           
                           // redirects to user account to review the data
