@@ -2,9 +2,6 @@ import React from 'react';
 import { updateReviewForm } from '../actions/reviewForm.js'
 import { connect } from 'react-redux'
 
-
-
-
 const ReviewForm = ({newReviewData, updateReviewForm, user_id, history, rec_area_id, handleSubmit, editMode}) => {   
 
 const handleChange = event => {
@@ -112,13 +109,6 @@ value= " "
 <input type="submit" value={editMode ? "Update Review" : "Create Review"}/>
 
 </form>
-
-
-
-
-
-
-
 )};
 
 

@@ -1,4 +1,3 @@
-//synchronous action creators
 
 export const recAreaResults = results => {
     return {
@@ -7,7 +6,6 @@ export const recAreaResults = results => {
     }
 }
 
-//async action creators
 export const recAreaUserSearch = (recSearchParams, history) => {
     
     return dispatch => {
@@ -27,3 +25,5 @@ export const recAreaUserSearch = (recSearchParams, history) => {
           history.push('/rec_areas')              
             
 })}}
+
+

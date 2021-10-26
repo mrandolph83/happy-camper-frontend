@@ -2,7 +2,6 @@ import { resetLoginForm } from "./loginForm.js"
 import { resetSignupForm } from "./signupForm.js"
 import { getMyReviews, clearReviews } from "./myReviews.js"
 
-
 //synchronous action creators
 export const setCurrentUser = user => {
     return {
@@ -23,7 +22,6 @@ export const clearCurrentUser = () => {
 export const login = (credentials, history) => {
     
     return  dispatch => {
-
         return fetch("http://127.0.0.1:3000/api/v1/login", {
             credentials: "include", 
             method: "POST",
@@ -54,11 +52,6 @@ export const logout = () => {
         dispatch(clearCurrentUser())
         dispatch(clearReviews())
 
-// potential future dispatch actions to put to use to fully 
-// clear state. Make actions to clear within each action/reducer
-
-        // dispatch(clearUserFavorites())
-        // dispatch(clearUserReviews())
         return fetch("http://127.0.0.1:3000/api/v1/logout", {
             credentials: "include",
             method: "DELETE"
@@ -67,10 +60,7 @@ export const logout = () => {
 }
 
 export const signup = (credentials, history) => {
-    console.log("credentials are", credentials)
     return  dispatch => {
-// credentials must be added to a key (user: credentials) before being sent to backend
-// so that ActionController can read it as a new object to be created with these attributes
         const userInfo = {
             user: credentials
         }
@@ -91,7 +81,6 @@ export const signup = (credentials, history) => {
             else {
                 
                 dispatch(setCurrentUser(response.data))
-                // dispatch(getUserFavorites())
                 dispatch(getMyReviews())
                 dispatch(resetSignupForm())
                 history.push('/')
@@ -100,8 +89,6 @@ export const signup = (credentials, history) => {
         .catch(console.log)
     }
 }
-
-
 
 export const getCurrentUser = () => {
    

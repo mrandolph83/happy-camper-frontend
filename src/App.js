@@ -5,10 +5,8 @@ import PathSelection from "./components/PathSelection.js"
 import RecAreaSearch from "./components/RecAreaSearch.js"
 import MyReviews from "./components/MyReviews.js"
 import ReviewCard from "./components/ReviewCard.js"
-import MyAccount from "./components/MyAccount.js"
 import Logout from './components/Logout.js'
 import Home from './components/Home.js'
-import RecAreaReviewsDisplay from './components/RecAreaReviewsDisplay'
 import DiscoverResults from './components/DiscoverResults.js'
 import RecAreaCard from './components/RecAreaCard.js'
 import Signup from './components/Signup'

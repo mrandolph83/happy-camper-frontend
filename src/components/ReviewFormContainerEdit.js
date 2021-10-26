@@ -8,20 +8,19 @@ import { connect } from 'react-redux'
 class EditReviewFormContainer extends React.Component {
 
    
-componentDidMount(){
-this.props.review && this.props.editReviewFormData(this.props.review)
-}
-
-componentDidUpdate(prevProps) {
-    this.props.review && !prevProps.review && this.props.editReviewFormData(this.props.review)
+  componentDidMount(){
+  this.props.review && this.props.editReviewFormData(this.props.review)
   }
+
+  componentDidUpdate(prevProps) {
+      this.props.review && !prevProps.review && this.props.editReviewFormData(this.props.review)
+    }
 
   componentWillUnmount() {
     this.props.resetReviewForm()
   }
 
 
-// Look into differences between making classes
     handleSubmit = (newReviewData) => {
     console.log("Edit review form")
     const { updateReview, history} = this.props
@@ -35,15 +34,11 @@ componentDidUpdate(prevProps) {
    
         
         return <>
-        
         <ReviewForm editMode handleSubmit={this.handleSubmit} />
         <button onClick={()=> deleteReview(reviewId, history)}> Delete Review </button>
 
         </>
     }
 };
-
-
-
 
 export default connect(null, { updateReview, resetReviewForm, deleteReview, editReviewFormData })(EditReviewFormContainer);

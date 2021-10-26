@@ -1,6 +1,4 @@
 
-
-// sync actions
 export const updateReviewForm = (name, value) => {
     return {
         type: "UPDATE_NEW_REVIEW_FORM", 
@@ -25,8 +23,7 @@ export const editReviewFormData = review => {
         amenities_review: review.attributes.amenities_review,
         activities_review: review.attributes.activities_review,
         family_review: review.attributes.family_review,
-        user_id: review.attributes.user_id
-        
+        user_id: review.attributes.user_id   
     }
     
     return {
@@ -35,8 +32,4 @@ export const editReviewFormData = review => {
         reviewFormData
     }
 }
-
-        
-// Check what the credentials are
-
 

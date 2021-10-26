@@ -23,7 +23,7 @@ const RecAreaSearch = ({recAreaFormData, updateRecAreaForm, history, user_id, re
 return (
     
     <div>
-    <p><img className="top-banner" src="../images/top-banner-discover.png" align="left" /></p>
+    <p><img className="top-banner" src="../images/top-banner-discover.png" alt="Discover an Experience" align="left" /></p>
         
     
     <form onSubmit={event => {
