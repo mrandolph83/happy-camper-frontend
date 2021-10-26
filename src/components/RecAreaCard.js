@@ -7,18 +7,21 @@ import RecAreaReviewsDisplay from './RecAreaReviewsDisplay'
 
 
 const RecAreaCard = (props) => {
+
+    let description_raw = props.recArea.attributes.description
+    const decoded_description = description_raw.replace(/<[^>]+>/g, '');
     
-console.log(props)
+console.log(decoded_description)
 return ( 
 <>
 <div className="rec-show-result-box">
 
-<img className="rec-show-pic" src={props.recArea.attributes.images} width="350px" alt="Image not available" />
+<img className="rec-show-pic" src={props.recArea.attributes.images} height="350px" alt="Image not available" />
 <h1 className="rec-show-attributes">{props.recArea.attributes.name}</h1>
 <h4>Activities:</h4>
 <p>{props.recArea.attributes.activities}</p>
 <p> <a href={`https://www.google.com/maps/dir//${props.recArea.attributes.latitude}, ${props.recArea.attributes.longitude}`} target="_blank">Get Directions</a></p>
-<p>{props.recArea.attributes.description}</p>
+<p>{decoded_description}</p>
 <div><RecAreaReviewsDisplay reviews = {props.recArea.attributes.reviews}/></div>
 
 </div>

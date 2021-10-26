@@ -14,7 +14,7 @@ const DiscoverResults = (props) => {
 
     
     props.recAreas.map(recArea => (
-        
+     
     <>
     <h2 key={recArea.id}><Link to={`/rec_areas/${recArea.id}`}> {recArea.attributes.name} </Link> </h2>
     <img className="result-pic" src={recArea.attributes.images} height="300px" alt="Image not available" onError={(e)=>{e.target.onerror = null; e.target.src=`../images/image-alternate-pic.gif`}}/>
@@ -24,7 +24,7 @@ const DiscoverResults = (props) => {
     {/* <p>{recArea.attributes.activities}</p> */}
    
     <p> <a href={`https://www.google.com/maps/dir//${recArea.attributes.name}/${recArea.attributes.city_state}`} target="_blank">Directions</a></p>
-    <p>{recArea.attributes.description}</p>
+    <p>{recArea.attributes.description.replace(/<[^>]+>/g, '')}</p>
 
     </>
     
