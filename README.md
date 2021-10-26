@@ -1,4 +1,23 @@
-# Getting Started with Create React App
+# HAPPY CAMPER
+## OVERVIEW 
+
+The Happy Camper web application is a way for nature enthusiasts to explore the many outdoor opportunities that the USA has to offer, from little-known state parks to its top-tier National Park Service. Using the RIDB API from www.Recreation.gov, the app allows users to search for an outdoor opportunity by name, by whatever activity they wish to pursue, and/or by state. In addition, the application offers an opportunity to be a part of a community of like-minded nature enthusiasts, with a review system that allows users to discover or rate recreation areas by the quality of nature, actitivites, amenities, and family-friendliness.    
+
+## LOGIN or SIGNUP
+
+Upon launching the application, the user can login to their acccount via form on the frontpage, or signup to make a new account. Upon login, the user has a choice to either use the application to DISCOVER a recreation area, or view MY REVIEWS to edit or delete reviews that have been posted already. The DISCOVER section can be browsed whether logged in or not. 
+
+## DISCOVER
+
+The DISCOVER area of this application is where its main functionality lies. A user can search for an opportunity by state and/or activity, or search by name. This forwards to a results page, where a user can see an image, name, and description of outdoor recreational activities that meet criteria. Clicking on the title leads to a show page, where reviews made of that area can be seen. A button allows the user to make a review of the selected area. 
+
+## MY REVIEWS
+
+The My Reviews section of the application allows users to Edit or Delete reviews they have made.
+
+# LAUNCHING THE APP
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +87,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# BACKEND DETAILS:
+This application runs on a Rails API backend, located at https://github.com/mrandolph83/happy-camper-backend. 
+
+$ bundle install
+
+Launch the system using the below command in your terminal and navigating to your specified local host URL:
+
+$ rails server
