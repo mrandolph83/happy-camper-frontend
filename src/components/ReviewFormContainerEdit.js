@@ -16,6 +16,7 @@ class EditReviewFormContainer extends React.Component {
       this.props.review && !prevProps.review && this.props.editReviewFormData(this.props.review)
     }
 
+    // Happens just beore moving on to the next page
   componentWillUnmount() {
     this.props.resetReviewForm()
   }
